@@ -8,7 +8,7 @@ Muhammad Aamir Shazad, Rajdeep Mohan Chatterjee, Shilpi Jain, Jin Wang, and mayb
 
 # Usage 
 
-1. Initialize the CMSSW enviroment
+1. Initialize the CMSSW enviroment:
 
 ```
 cmsrel CMSSW_9_4_9
@@ -17,28 +17,28 @@ cmsenv
 
 ```
 
-2. copy example codes
+2. Clone example codes:
 
 ```
 git clone https://gitlab.cern.ch/wangjin/quickECALMonitor.git
 
 ```
 
-3. get the ntuple list for the samples that you want to check. in findNtuples.sh you should give the path of the samples 
+3. Retrieve the ntuple list for the samples that you want to check. In "findNtuples.sh" you should give the path of the samples.
 
 ```
 . findNtuples.sh
 
 ```
 
-4. dump the necessary variables you want to check, e.g. mee. You can modify "ECALELF_ntuple_processor" class to change selections and variables
+4. Dump the necessary variables you want to check, e.g. mee. You can modify "ECALELF_ntuple_processor" class to change selections and variables.
 
 ```
 . dumpVariables.sh
 
 ```
 
-5. compare performance and extract resolution, change the file names and path in "plotHists.C", plot parameters can be modified with "histOption.txt"
+5. Compare performance and extract resolution, change the file names and path in "plotAll.cxx", plot parameters can be modified with "histOption.txt".
 
 ```
 root -b -q -l plotAll.cxx 
