@@ -20,7 +20,7 @@ cmsenv
 2. copy example codes
 
 ```
-cp -r ~wangjin/public/ecal/ecalmonitor-test .
+git clone https://gitlab.cern.ch/wangjin/quickECALMonitor.git
 
 ```
 
