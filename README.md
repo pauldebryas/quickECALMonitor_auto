@@ -11,7 +11,7 @@ Muhammad Aamir Shazad, Rajdeep Mohan Chatterjee, Shilpi Jain, Jin Wang, and mayb
 1. Initialize the CMSSW enviroment
 
 ```
-cmsrel CMSSW_9_4_$ cd CMSSW_9_4_9/src
+cmsrel CMSSW_9_4_9
 cd CMSSW_9_4_9/src
 cmsenv
 
