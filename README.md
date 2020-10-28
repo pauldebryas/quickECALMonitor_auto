@@ -41,7 +41,7 @@ git clone https://gitlab.cern.ch/wangjin/quickECALMonitor.git
 5. Compare performance and extract resolution, change the file names and path in "plotAll.cxx", plot parameters can be modified with "histOption.txt".
 
 ```
-root -b -q -l plotAll.cxx 
+root -b -q -l "plotAll.cxx(\"outputs/ul2018_eop_2d_median_IOVN/ul2018_eop_2d_median_IOVN_all.root\",\"outputs/ul2018_eop_2d_median_IOVNm1/ul2018_eop_2d_median_IOVNm1_all.root\")"
 
 ```
 

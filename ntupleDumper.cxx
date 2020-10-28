@@ -5,23 +5,10 @@
 
 using namespace std;
 
-int ntupleDumper(string m_basedir, TString jobname, Bool_t m_isData, string s_runlist="") {
+int ntupleDumper(string m_basedir, TString jobname, Bool_t m_isData, , TString file_timebin, TString file_lumidat, string s_runlist="") {
 
-	string time_bins = m_basedir + "inputs/Run2_UL_timebins_all.root";
-	string lumi_file = m_basedir + "inputs/lumi_3years_csv.dat";
-
-	if(jobname.Contains("2016")) {
-	  lumi_file = m_basedir + "inputs/lumi_2016_csv.dat";
-	  time_bins = m_basedir + "inputs/UL2016_timebins_all.root";
-	}
-	else if(jobname.Contains("2017")) {
-	  lumi_file = m_basedir + "inputs/lumi_2017_csv.dat";
-	  time_bins = m_basedir + "inputs/UL2017_timebins_all.root";
-        }
-        else if(jobname.Contains("2018")) {
- 	  lumi_file = m_basedir + "inputs/lumi_2018_csv.dat";
-	  time_bins = m_basedir + "inputs/UL2018_timebins_all.root";
-        }
+	string time_bins = file_timebin;
+	string lumi_file = file_lumidat;
 
 	int isFindBins = 0;
 	string writedir, filein, fileout;

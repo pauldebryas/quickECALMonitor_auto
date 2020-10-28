@@ -18,28 +18,28 @@ parseOptions histOpts;
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 string m_writeDir="outputs/plots/";
-sample ul2018eop2dIOVN("outputs/ul2018_eop_2d_median_IOVN/ul2018_eop_2d_median_IOVN_all.root", "eop_2d_median_IOVN", 21, "#238b45");
-sample ul2018eop2dIOVNm1("outputs/ul2018_eop_2d_median_IOVNm1/ul2018_eop_2d_median_IOVNm1_all.root", "eop_2d_median_IOVNm1", 22, "#023858");
-
-
-std::vector<sample*> data = {&ul2018eop2dIOVNm1};
-std::vector<sample*> mc = {&ul2018eop2dIOVN};
 
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-void plotHist(std::string _histName);
+void plotHist(std::string _histName, TString sample1, TString sample2);
 void plotAll();
 statistic st;
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-void plotHist(std::string _histName){
+void plotHist(std::string _histName, TString sample1, TString sample2){
 	gStyle->SetOptTitle(0);
 	gStyle->SetOptStat(0);
+
+	sample ul2018eop2dIOVN(sample1, "eop_2d_median_IOVN", 21, "#238b45");
+	sample ul2018eop2dIOVNm1(sample2, "eop_2d_median_IOVNm1", 22, "#023858");
+
+	std::vector<sample*> data = {&ul2018eop2dIOVNm1};
+	std::vector<sample*> mc = {&ul2018eop2dIOVN};
 
 	std::vector<TObject*> _deleteThese;
 
@@ -330,7 +330,7 @@ void plotHist(std::string _histName){
 };
 
 
-void plotAll(){
+void plotAll(TString sample1, TString sample2){
 
 	gROOT->SetBatch();
 
@@ -343,6 +343,6 @@ void plotAll(){
 	// plotHist(histList[0]);
 	for(auto & hist : histList){
 		if(hist.find("S4") != std::string::npos || hist.find("s4") != std::string::npos) continue;
-		plotHist(hist);
+		plotHist(hist, sample1, sample2);
 	}
 };
